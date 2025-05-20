@@ -192,7 +192,7 @@ def schedule_nightly(base: str):
 def main():
     st.set_page_config("Wialon DDD Manager", layout="wide")
 
-    qs = st.query_params()
+    qs = st.experimental_get_query_params()
     base_url = normalize_base_url(unquote_plus(qs.get("baseUrl", ["https://hst-api.wialon.com"])[0]))
     sid_qs   = qs.get("sid", [None])[0]
 
